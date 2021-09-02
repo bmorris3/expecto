@@ -1,0 +1,7 @@
+name: kelp
+channels:
+  - conda-forge
+dependencies:
+  - astropy
+  - pip:
+    - pytest-astropy
