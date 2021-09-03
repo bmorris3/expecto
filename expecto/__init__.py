@@ -2,6 +2,6 @@
 
 import os
 if os.path.exists('version.py'):
-    from .version import __version__
+    from .version import __version__  # noqa
 
-from .core import *
+from .core import *  # noqa

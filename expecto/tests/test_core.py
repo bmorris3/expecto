@@ -7,6 +7,7 @@ from astropy.tests.helper import assert_quantity_allclose
 
 from ..core import get_spectrum
 
+
 @pytest.mark.remote_data
 def test_get_spectrum():
 

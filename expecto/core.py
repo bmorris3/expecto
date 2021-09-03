@@ -49,7 +49,7 @@ def validate_grid_point(T_eff, log_g, Z, alpha, closest_params):
         T_eff > phoenix_model_temps.max() or T_eff < phoenix_model_temps.min()
     )
     logg_out_of_range = (
-            log_g > phoenix_model_logg.max() or log_g < phoenix_model_logg.min()
+        log_g > phoenix_model_logg.max() or log_g < phoenix_model_logg.min()
     )
     z_out_of_range = (
         Z > phoenix_model_z.max() or Z < phoenix_model_z.min()
@@ -60,6 +60,7 @@ def validate_grid_point(T_eff, log_g, Z, alpha, closest_params):
     out_of_range = [
         temp_out_of_range, logg_out_of_range, z_out_of_range, alpha_out_of_range
     ]
+
     if np.any(out_of_range):
         warn_message = (
             f"{np.count_nonzero(out_of_range):d} supplied parameters out of the"
@@ -107,7 +108,6 @@ def get_url(T_eff, log_g, Z=0, alpha=0):
         alpha_sign = '+'
     else:
         alpha_sign = '-'
-
 
     url = (
         phoenix_base_url +
