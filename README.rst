@@ -4,6 +4,10 @@ expecto
 .. image:: http://img.shields.io/badge/powered%20by-AstroPy-orange.svg?style=flat
     :target: http://www.astropy.org/
 
+.. image:: https://github.com/bmorris3/expecto/workflows/CI%20Tests/badge.svg
+    :target: https://github.com/bmorris3/expecto/actions
+
+
 Basic usage
 +++++++++++
 
