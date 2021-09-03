@@ -30,11 +30,13 @@ jobs:
             os: ubuntu-latest
             python: 3.7
             toxenv: py37-test
+            toxposargs: --remote-data=any
 
           - name: Python 3.9 with latest dev versions of key dependencies
             os: ubuntu-latest
             python: 3.9
             toxenv: py39-test-devdeps
+            toxposargs: --remote-data=any
 
           - name: Test building of Sphinx docs
             os: ubuntu-latest

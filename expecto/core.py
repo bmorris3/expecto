@@ -98,14 +98,26 @@ def get_url(T_eff, log_g, Z=0, alpha=0):
         T_eff, log_g, Z, alpha, closest_params
     )
 
+    if closest_grid_Z > 0.25:
+        z_sign = '+'
+    else:
+        z_sign = '-'
+
+    if closest_grid_alpha > 0.1:
+        alpha_sign = '+'
+    else:
+        alpha_sign = '-'
+
+
     url = (
         phoenix_base_url +
-        'Z-{Z:1.1f}/lte{T_eff:05d}-{log_g:1.2f}-{alpha:1.1f}.PHOENIX-'
-        'ACES-AGSS-COND-2011-HiRes.fits'
+        'Z' + z_sign +
+        '{Z:1.1f}/lte{T_eff:05d}-{log_g:1.2f}' + alpha_sign +
+        '{alpha:1.1f}.PHOENIX-ACES-AGSS-COND-2011-HiRes.fits'
     ).format(
         T_eff=closest_grid_temperature,
         log_g=closest_grid_logg,
-        Z=closest_grid_Z,
+        Z=abs(closest_grid_Z),
         alpha=closest_grid_alpha
     )
     return url
@@ -141,6 +153,7 @@ def get_spectrum(
     url = get_url(
         T_eff=T_eff, log_g=log_g, Z=Z, alpha=alpha
     )
+    print(url)
     with fits.open(url, cache=cache) as fits_file:
         with warnings.catch_warnings():
             warnings.simplefilter("ignore", UnitsWarning)
