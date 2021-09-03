@@ -13,9 +13,9 @@ project = 'expecto'
 copyright = '2021, Brett M. Morris'
 author = 'Brett M. Morris'
 
-# The full version, including alpha/beta/rc tags
-from expecto import __version__
-release = __version__
+# # The full version, including alpha/beta/rc tags
+# from expecto import __version__
+# release = __version__
 
 # -- General configuration ---------------------------------------------------
 
@@ -34,6 +34,8 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx_automodapi.automodapi',
     'sphinx_automodapi.smart_resolver',
+    "sphinx.ext.autosummary",
+    "matplotlib.sphinxext.plot_directive"
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -54,7 +56,10 @@ master_doc = 'index'
 # -- Options for intersphinx extension ---------------------------------------
 
 # Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {'https://docs.python.org/': None}
+intersphinx_mapping = {
+    'https://docs.python.org/': None,
+    'specutils': ('https://specutils.readthedocs.io/en/stable/', None)
+}
 
 # -- Options for HTML output -------------------------------------------------
 

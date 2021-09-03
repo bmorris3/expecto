@@ -147,13 +147,12 @@ def get_spectrum(
 
     Returns
     -------
-    spectrum : `~specutils.Spectrum1D`
+    spectrum : ~specutils.Spectrum1D
         Model spectrum
     """
     url = get_url(
         T_eff=T_eff, log_g=log_g, Z=Z, alpha=alpha
     )
-    print(url)
     with fits.open(url, cache=cache) as fits_file:
         with warnings.catch_warnings():
             warnings.simplefilter("ignore", UnitsWarning)
