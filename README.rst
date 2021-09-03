@@ -1,3 +1,4 @@
+=======
 expecto
 =======
 
@@ -7,9 +8,15 @@ expecto
 .. image:: https://github.com/bmorris3/expecto/workflows/CI%20Tests/badge.svg
     :target: https://github.com/bmorris3/expecto/actions
 
+Pure Python package for retrieving 
+`PHOENIX model stellar spectra <https://phoenix.astro.physik.uni-goettingen.de/?>`_ 
+via FTP. Spectra are returned as 
+`specutils.Spectrum1D <https://specutils.readthedocs.io/en/stable/api/specutils.Spectrum1D.html#specutils.Spectrum1D>`_ 
+objects.
 
-Basic usage
-+++++++++++
+
+Basic Usage
+^^^^^^^^^^^
 
 Let's get a Sun-like spectrum:
 
@@ -21,11 +28,10 @@ Let's get a Sun-like spectrum:
         T_eff=5800, log_g=4.5, cache=False
     )
 
-Want a plot of the spectrum?
+and let's plot that spectrum:
 
 .. code-block:: python
 
-    # Plot the spectrum:
     import matplotlib.pyplot as plt
     from astropy.visualization import quantity_support
 
