@@ -60,7 +60,8 @@ master_doc = 'index'
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {
     'https://docs.python.org/': None,
-    'specutils': ('https://specutils.readthedocs.io/en/stable/', None)
+    'specutils': ('https://specutils.readthedocs.io/en/stable/', None),
+    'astropy': ('https://docs.astropy.org/en/stable/', None),
 }
 
 html_theme = 'sphinx_book_theme'
@@ -69,7 +70,6 @@ html_logo = "assets/logo.png"
 html_favicon = "assets/logo.ico"
 
 html_theme_options = {
-    # "logo_only": True,
     "use_download_button": True,
     "repository_url": "https://github.com/bmorris3/expecto",
     "repository_branch": "main",
