@@ -149,6 +149,14 @@ def get_spectrum(
     -------
     spectrum : ~specutils.Spectrum1D
         Model spectrum
+
+    Notes
+    -----
+    expecto downloads PHOENIX model spectra via FTP using the
+    :py:mod:`~astropy.io.fits` module's :py:obj:`~astropy.io.fits.open` method.
+    To set a timeout limit, configure the
+    :py:attr:`~astropy.utils.data.Conf.remote_timeout` attribute of
+    :py:class:`~astropy.utils.data.Conf`.
     """
     url = get_url(
         T_eff=T_eff, log_g=log_g, Z=Z, alpha=alpha
