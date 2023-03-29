@@ -12,6 +12,11 @@ expecto
     :target: https://expecto.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status
 
+.. image:: https://github.com/bmorris3/expecto/blob/main/docs/assets/logo.svg
+   :alt: expecto logo
+   :width: 200
+   :align: right
+
 Pure Python package for retrieving 
 `PHOENIX model stellar spectra <https://phoenix.astro.physik.uni-goettingen.de/?>`_ 
 via FTP. Spectra are returned as 

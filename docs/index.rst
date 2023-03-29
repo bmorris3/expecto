@@ -6,7 +6,16 @@ Pure Python package for retrieving
 `PHOENIX model stellar spectra <https://phoenix.astro.physik.uni-goettingen.de/?>`_
 via FTP. Spectra are returned as
 `specutils.Spectrum1D <https://specutils.readthedocs.io/en/stable/api/specutils.Spectrum1D.html#specutils.Spectrum1D>`_
-objects.
+objects. The source code is available
+`on GitHub <https://github.com/bmorris3/expecto>`_.
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   expecto/install.rst
+   expecto/acknowledge.rst
+   expecto/index.rst
 
 Basic Usage
 ^^^^^^^^^^^
@@ -48,8 +57,3 @@ and let's plot that spectrum:
 
     plt.show()
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
-   expecto/index.rst
