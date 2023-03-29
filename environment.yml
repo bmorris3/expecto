@@ -1,4 +1,4 @@
-name: kelp
+name: expecto
 channels:
   - conda-forge
 dependencies:
