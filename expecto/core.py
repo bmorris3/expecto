@@ -162,7 +162,17 @@ def get_spectrum(
 
     wavelengths = get_phoenix_wavelengths(cache=cache, vacuum=vacuum)
 
-    return Spectrum1D(fluxes, spectral_axis=wavelengths, meta=header)
+    # only return wavelengths > 0:
+    positive_wavelengths = wavelengths > 0
+
+    # specutils requires that we sort the wavelengths:
+    sort_wavelengths = np.argsort(wavelengths[positive_wavelengths])
+
+    return Spectrum1D(
+        flux=fluxes[positive_wavelengths][sort_wavelengths],
+        spectral_axis=wavelengths[positive_wavelengths][sort_wavelengths],
+        meta=header
+    )
 
 
 def get_phoenix_wavelengths(cache=True, vacuum=True):
@@ -189,7 +199,8 @@ def get_phoenix_wavelengths(cache=True, vacuum=True):
     # Husser 2013, Eqns. 8-10:
     sigma_2 = (10**4 / wavelengths_vacuum)**2
     f = (
-        1.0 + 0.05792105/(238.0185 - sigma_2) + 0.00167917 / (57.362 - sigma_2)
+        1.0 + 0.05792105/(238.0185 - sigma_2) +
+        0.00167917 / (57.362 - sigma_2)
     )
     wavelengths_air = wavelengths_vacuum / f
 
