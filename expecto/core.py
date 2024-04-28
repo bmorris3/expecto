@@ -109,16 +109,39 @@ def get_url(T_eff, log_g, Z=0, alpha=0):
     else:
         alpha_sign = '-'
 
+    directory_term = (
+        'Z' + z_sign + '{Z:1.1f}'
+    ).format(
+        Z=abs(closest_grid_Z)
+    )
+
+    metallicity_term = (
+        z_sign + '{Z:1.1f}'
+    ).format(
+        Z=abs(closest_grid_Z)
+    )
+
+    if closest_grid_alpha != 0:
+        alpha_term = (
+            'Alpha=' + alpha_sign + '{alpha:1.2f}'
+        ).format(
+            alpha=abs(closest_grid_alpha)
+        )
+
+        directory_term += '.' + alpha_term
+        metallicity_term += '.' + alpha_term + '.'
+    else:
+        metallicity_term += '.'
+
     url = (
         phoenix_base_url +
-        'Z' + z_sign +
-        '{Z:1.1f}/lte{T_eff:05d}-{log_g:1.2f}' + alpha_sign +
-        '{alpha:1.1f}.PHOENIX-ACES-AGSS-COND-2011-HiRes.fits'
+        directory_term +
+        '/lte{T_eff:05d}-{log_g:1.2f}' +
+        metallicity_term +
+        'PHOENIX-ACES-AGSS-COND-2011-HiRes.fits'
     ).format(
         T_eff=closest_grid_temperature,
         log_g=closest_grid_logg,
-        Z=abs(closest_grid_Z),
-        alpha=closest_grid_alpha
     )
     return url
 
