@@ -12,6 +12,10 @@ expecto
     :target: https://expecto.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status
 
+.. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.21723579.svg
+    :target: https://doi.org/10.5281/zenodo.21723579
+    :alt: zenodo
+
 Pure Python package for retrieving 
 `PHOENIX model stellar spectra <https://phoenix.astro.physik.uni-goettingen.de/?>`_ 
 via FTP. Spectra are returned as 
